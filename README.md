@@ -6,7 +6,7 @@ LLM agent can call.
 
 The point of the POC: an agent shouldn't need a bespoke integration per assistant. Implement the
 domain once as an MCP server, and any MCP-capable client (Claude Code, Microsoft Foundry agents,
-an internal chat surface) gets the same three tools with the same contracts.
+an internal chat surface) gets the same nine tools with the same contracts.
 
 All data in this repository is **synthetic**. The schema, products, rules, and documents were
 invented for this demo and are not derived from any production system.
