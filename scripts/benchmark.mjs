@@ -47,7 +47,8 @@ const HYBRID = `
     FROM policy_documents p
     LEFT JOIN v ON v.doc_id = p.doc_id
     LEFT JOIN t ON t.doc_id = p.doc_id
-   ORDER BY COALESCE(1.0 / (60 + v.r), 0) + COALESCE(1.0 / (60 + t.r), 0) DESC
+   ORDER BY COALESCE(1.0 / (60 + v.r), 0) + COALESCE(1.0 / (60 + t.r), 0) DESC,
+            COALESCE(v.r, 2147483647), p.doc_id
    LIMIT 1`;
 
 const top = async (sql, params) => (await query(sql, params))[0]?.doc_id ?? '—';
